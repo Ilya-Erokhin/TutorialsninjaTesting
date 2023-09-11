@@ -5,7 +5,6 @@ from selenium.webdriver.remote.webelement import WebElement
 
 
 class PageElement:
-
     def __init__(self, driver: WebDriver, locator: Tuple[str, str]):
         self.driver = driver
         self.locator = locator
@@ -15,6 +14,8 @@ class PageElement:
 
         TODO:
             1. Catch StaleElementReferenceException and re-try the search.
+            2. Get different non-standard attributes.
+            3. Write down typical expectations
         """
         return self.driver.find_element(*self.locator)
 

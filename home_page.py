@@ -5,16 +5,22 @@ from page_element import PageElement
 
 
 class HomePage:
-
     def __init__(self, driver: WebDriver):
         self.driver = driver
+        self.search_button = PageElement(
+            self.driver, (By.CSS_SELECTOR, "button.btn-default")
+        )
+        self.search_field = PageElement(self.driver, (By.NAME, "search"))
+        self.shopping_cart = PageElement(
+            self.driver,
+            (By.CSS_SELECTOR, "btn btn-inverse btn-block btn-lg dropdown-toggle"),
+        )
+        self.shopping_cart_menu = PageElement(
+            self.driver, (By.XPATH, '//*[@id="top-links"]/ul/li[4]/a')
+        )
 
     def open(self) -> None:
-        self.driver.get('https://tutorialsninja.com/demo/index.php')
-        self.search_button = PageElement(self.driver, (By.CSS_SELECTOR, 'button.btn-default'))
-        self.search_field = PageElement(self.driver, (By.NAME, 'search'))
-        self.shopping_cart = PageElement(self.driver, (By.CSS_SELECTOR, 'btn btn-inverse btn-block btn-lg dropdown-toggle'))
-        self.shopping_cart_menu = PageElement(self.driver, (By.XPATH, '//*[@id="top-links"]/ul/li[4]/a'))
+        self.driver.get("https://tutorialsninja.com/demo/index.php")
 
     def set_search_query(self, query: str) -> None:
         """Input keyword (In the Site Header)"""
@@ -28,4 +34,3 @@ class HomePage:
 
     def click_shopping_cart_menu(self) -> None:
         self.shopping_cart_menu.click()
-
