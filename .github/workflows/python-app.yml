@@ -29,6 +29,9 @@ jobs:
         pip install -r requirements/base.txt
         pip install -r requirements/test.txt
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Type checking.
+    - name: Type checking
       run: |
         mypy .
+    - name: Pylint
+      run: |
+        pylint *.py

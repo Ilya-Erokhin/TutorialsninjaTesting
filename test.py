@@ -1,3 +1,4 @@
+""" Basic tests for Open Cart."""
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromiumService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -8,6 +9,7 @@ from search_page import SearchPage
 
 
 def test():
+    """Search for 'apple', look for 'MacBook'"""
     driver = webdriver.Chrome(
         service=ChromiumService(
             ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install()
@@ -25,6 +27,7 @@ def test():
 
 
 def test_search_home():
+    """Search for 'Samsung' via header."""
     driver = webdriver.Chrome(
         service=ChromiumService(
             ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install()
@@ -42,6 +45,7 @@ def test_search_home():
 
 
 def test_search_page():
+    """Search for 'Samsung' via search criteria button."""
     driver = webdriver.Chrome(
         service=ChromiumService(
             ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install()

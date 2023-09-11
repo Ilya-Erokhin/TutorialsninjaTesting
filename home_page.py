@@ -1,3 +1,4 @@
+""" Page object model for Home Page."""
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 
@@ -5,7 +6,13 @@ from page_element import PageElement
 
 
 class HomePage:
+    """Page object model for Home Page."""
+
     def __init__(self, driver: WebDriver):
+        """Default Constructor
+
+        :param driver: WebDriver instance.
+        """
         self.driver = driver
         self.search_button = PageElement(
             self.driver, (By.CSS_SELECTOR, "button.btn-default")
@@ -20,6 +27,7 @@ class HomePage:
         )
 
     def open(self) -> None:
+        """Opens the home page."""
         self.driver.get("https://tutorialsninja.com/demo/index.php")
 
     def set_search_query(self, query: str) -> None:
@@ -27,10 +35,13 @@ class HomePage:
         self.search_field.send_keys(query)
 
     def click_search(self) -> None:
+        """Click on the search button on the top."""
         self.search_field.click()
 
     def click_shopping_cart(self) -> None:
+        """Click on the shopping cart button."""
         self.shopping_cart.click()
 
     def click_shopping_cart_menu(self) -> None:
+        """Click shopping cart menu."""
         self.shopping_cart_menu.click()
