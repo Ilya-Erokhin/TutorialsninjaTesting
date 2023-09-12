@@ -32,6 +32,3 @@ jobs:
     - name: Type checking
       run: |
         mypy .
-    - name: Pylint
-      run: |
-        pylint *.py

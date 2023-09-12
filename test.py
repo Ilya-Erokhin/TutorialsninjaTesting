@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.service import Service as ChromiumService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 
-from home_page import HomePage
-from search_page import SearchPage
+from pages.home_page import HomePage
+from pages.search_page import SearchPage
 
 
 def test():
