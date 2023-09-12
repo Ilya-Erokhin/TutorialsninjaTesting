@@ -43,3 +43,24 @@ def step_impl(context):
     assert context.login_page.display_status_of_warning_message(
         "Warning: No match for E-Mail Address and/or Password."
     )
+
+
+@when(
+    'I enter valid email say "{email}" and invalid password say "{password}" into the fields'
+)
+def step_impl(context, email, password):
+    context.login_page.enter_email_address(email)
+    context.login_page.enter_password(password)
+
+
+@when('I enter invalid email and invalid password say "{password}" into the fields')
+def step_impl(context, password):
+    invalid_email = EmailWithTimeStampGenerator.get_new_email_with_timestamp()
+    context.login_page.enter_email_address(invalid_email)
+    context.login_page.enter_password(password)
+
+
+@when("I dont enter anything into email and password fields")
+def step_impl(context):
+    context.login_page.enter_email_address("")
+    context.login_page.enter_password("")
