@@ -27,4 +27,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Features
       run: |
-        behave C:\\Users\\illya\\PycharmProjects\\TestProject\\features\\register.feature C:\\Users\\illya\\PycharmProjects\\TestProject\\features\\login.feature
+        .\run_tests.bat
