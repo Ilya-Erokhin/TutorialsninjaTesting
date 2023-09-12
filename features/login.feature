@@ -7,11 +7,10 @@ Feature: Login Functionality
     And I click on Login button
     Then I should get logged in
     Examples:
-      |email                        |password     |
-      |illyaerokhinone@gmail.com    |secondone    |
-      |illyaerokhintwo@gmail.com    |secondtwo    |
-      |illyaerokhinthree@gmail.com  |secondthree  |
-
+      |email                          |password     |
+      |amotoorisampleone@gmail.com    |secondone    |
+      |amotoorisampletwo@gmail.com    |secondtwo    |
+      |amotoorisamplethree@gmail.com  |secondthree  |
 
   @login
   Scenario: Login with invalid email and valid password
@@ -23,7 +22,7 @@ Feature: Login Functionality
   @login
   Scenario: Login with valid email and invalid password
     Given I navigated to Login page
-    When I enter valid email say "amotoriapril2023sample@gmail.com" and invalid password say "1234567890" into the fields
+    When I enter valid email say "amotoorisampleone@gmail.com" and invalid password say "1234567890" into the fields
     And I click on Login button
     Then I should get a proper warning message
 
