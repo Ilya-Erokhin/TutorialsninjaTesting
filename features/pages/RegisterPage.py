@@ -30,9 +30,9 @@ class RegisterPage(BasePage):
             "first_name_field_id", self.first_name_field_id, first_name_text
         )
 
-    def enter_last_name(self, lust_name_text):
+    def enter_last_name(self, last_name_text):
         self.type_into_element(
-            "last_name_field_id", self.first_name_field_id, lust_name_text
+            "last_name_field_id", self.last_name_field_id, last_name_text
         )
 
     def enter_email(self, email_text):

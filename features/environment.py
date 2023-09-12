@@ -4,7 +4,6 @@ from utilities import ConfigReader
 
 
 def before_scenario(context, driver):
-
     browser_name = ConfigReader.read_configuration("basic info", "browser")
 
     if browser_name.__eq__("chrome"):
